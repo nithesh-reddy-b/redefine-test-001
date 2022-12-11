@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
 import ExecutiveHomeViewerPage from 'src/components/ExecutiveHomeViewerPage'
-import ExecutiveHomeViewerPage2 from 'src/components/ExecutiveHomeViewerPage'
 import HeadSideBarDetailView from 'src/components/HeadDetailSideBar'
 import HeadSideBar from 'src/components/HeadSideBar/HeadSideBar'
 import LeadsManagementHome from 'src/components/LeadsManagement'
@@ -16,7 +15,7 @@ import { useAuth } from 'src/context/firebase-auth-context'
 
 import HeadNavBar from '../../components/HeadNavBar/HeadNavBar'
 
-const LeadsManagerPage = () => {
+const LeadsManager2Page = () => {
   const { user } = useAuth()
 
   const [showSideBar, setShowSideBar] = useState(false)
@@ -81,13 +80,13 @@ const LeadsManagerPage = () => {
 
             <div className="flex-grow  items-center overflow-y-auto  px-300  py-300">
               {viewable === 'inProgress' && (
-                <ExecutiveHomeViewerPage2 leadsTyper={'inProgress'} />
+                <ExecutiveHomeViewerPage leadsTyper={'inProgress'} />
               )}
               {viewable === 'booked' && (
-                <ExecutiveHomeViewerPage2 leadsTyper={'booked'} />
+                <ExecutiveHomeViewerPage leadsTyper={'booked'} />
               )}
               {viewable === 'archieveLeads' && (
-                <ExecutiveHomeViewerPage2 leadsTyper={'archieveLeads'} />
+                <ExecutiveHomeViewerPage leadsTyper={'archieveLeads'} />
               )}
               {viewable === 'Today1' && (
                 <TodayLeadsHomePage taskType={viewable} />
@@ -199,4 +198,4 @@ const LeadsManagerPage = () => {
   )
 }
 
-export default LeadsManagerPage
+export default LeadsManager2Page
