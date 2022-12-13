@@ -197,7 +197,8 @@ export default function CustomerProfileSideView({
   const [fetchedUsersList, setfetchedUsersList] = useState([])
   const [usersList, setusersList] = useState([])
   const [uploadFile, setUploadFile] = useState()
-
+  const [uploadPancard, setUploadPancard] = useState()
+  const [uploadAadharcard, setUploadAadharcard] = useState()
   // const [leadStatus, setLeadStatus] = useState([])
   const [selFeature, setFeature] = useState('appointments')
   const [myStatus, setMyStatus] = useState('')
@@ -1737,7 +1738,7 @@ export default function CustomerProfileSideView({
                         { lab: 'Tasks', val: 'appointments' },
                         // { lab: 'Tasks', val: 'tasks' },
                         { lab: 'Notes', val: 'notes' },
-                        // { lab: 'Documents', val: 'documents' },
+                        { lab: 'Documents', val: 'documents' },
                         // { lab: 'Phone', val: 'phone' },
                         { lab: 'Email', val: 'email' },
                         { lab: 'Activity Log', val: 'timeline' },
@@ -2100,15 +2101,17 @@ export default function CustomerProfileSideView({
                             options={attachTypes}
                           />
                         </div>
-                        <label
-                          htmlFor="formFile"
-                          className="form-label inline-block mb-2  font-regular text-sm "
-                        >
-                          Upload file
-                        </label>
+                        <p className="font-regular text-sm">Upload File</p>
                         <form onSubmit={docUploadHandler}>
+                          <label
+                            htmlFor="formFile"
+                            className="form-label inline-block mb-2 w-96 px-10 bg-[#FFF9F2] rounded-md py-3 pb-6 font-regular text-sm "
+                          >
+                            Select File
+                          </label>
                           <input
-                            className="form-control
+                            className="form-control hidden
+
     block
     w-full
     px-3
